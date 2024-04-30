@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+@font-face {
+font-family: 'Android';
+src: url('../fontes/idroid.otf') format('opentype');
+font-weight:normal; } /*defenindo a fonte*/
+
+
+:root {
+    --cor0: #f7f6f4;
+    --cor1: #83e1ab;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}   /* varaivel no css ( -- ) */ 
+
+* { margin: 0px;
+padding: 0px;}  /* estabelecendo uma configuração geral ( para todos os elementos )- representação: '*'  */
+
+
+body {
+background-color:var(--cor1);
+font-family: var(--fonte-padrao);
+}
+
+a.externo::after { content:'/1F517';} /* criando uma classe para links externos, assim ao classifica-lo como 'externo' um emoji aparecerá depois da palavra */
+
+
+header {background-image: linear-gradient(to bottom, var(--cor3), var(--cor4)); /* formando o degradê */
+min-width: 150px;
+text-align: center; 
+padding-top: 30px;
+
+}
+
+header > h { color: var(--cor0);
+font-family: var(--fonte-destaque);
+margin-bottom:20px;
+font-size: 3em;
+text-shadow: 0px 0px 10px black;
+}
+
+header > p {color: white;
+font-family: var(--fonte-padrao);
+font-size: 1.2em;
+padding-bottom: 30px;
+padding-left: 10px;
+padding-right: 10px;
+text-shadow: 0px 0px 10px black;}
+
+nav { background-color: var(--cor5);
+padding: 10px;
+box-shadow: 0 5 7px black;}
+
+NAV > a {
+color: white;
+text-decoration: none;
+padding: 10px;
+padding-left: 30px;
+transition-duration: 0.5s ; /* ao colocar o mouse, 1 seg de transição para outro elemento */
+}
+
+nav > a:hover {
+    background-color: var(--cor1); /* ao passar o mouse, trocar a cor de fundo */
+color: var(--cor5); /* ao passar o mouse, mudar a cor do texto*/ }
+    
+
+
+main {background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px black;
+    min-width: 320px; /* tamanho de largura padrão de celulares antigos*/
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px; /* separando o conteudo escrito das extremidades (nesse caso a região de baixo do bloco) */
+    border-bottom-left-radius: 10px ; /* apenas a borda de baixo */
+    border-bottom-right-radius: 10px;  /* apenas a borda de baixo */}
+
+main h1 {
+    font-family: var(--fonte-android);
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+}
+
+main p { margin: 15px 0px;
+text-align: justify;
+text-indent: 30px; /* espaço início de parágrafo*/ 
+font-size: 1em;
+line-height: 2em; /* espaço entre uma linha e outra */ }
+
+main strong {color: var(--cor4)}
+
+main a {
+text-decoration: none;
+font-weight: bold; /* negrito */
+color: var(--cor5);
+background-color: var(--cor3);
+padding: 2px 6px;
+}
+
+main a:hover {color: var(--cor0);} 
+
+main img {width: 100%} /* largura da img */
+
+main img.pequena { max-width: 300px;
+display:block; /* transformar a imagem em um bloco*/
+margin:auto;} /* centralizar*/
+
+div.video {background-color: var(--cor5);
+margin: 0px -20px 30px -20px;
+padding: 20px;
+padding-bottom:50%; /* processo para centralizar o vídeo do youtube */
+position: relative; /* processo para centralizar o vídeo do youtube */
+}
+
+div.video > iframe { position: absolute;
+top: 5% ;
+left: 5% ;
+width: 90%;
+height: 90%;
+} /* processo para centralizar o vídeo do youtube */
+
+
+aside {
+    background-color: var(--cor2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+aside> ul { list-style-position: inside; /* colocando a “•” para dentro da caixa */
+columns: 2;}
+
+footer {background-color: var(--cor5);
+color: white;
+text-align: center;
+padding: 5px;
+}
+
+footer a { text-decoration: none;
+font-weight: bolder;
+color: white;}
+
+footer a:hover {
+background-color: #ffffff;
+color:var(--cor4);
+text-decoration: none;
+}
